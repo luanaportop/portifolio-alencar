@@ -1,0 +1,65 @@
+.sobre {
+  background: #CED8E3;
+  color: #292D42;
+  padding: 6rem 4rem;
+
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.subtitulo {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sobre h2 {
+  font-size: 42px;
+  max-width: 700px;
+  margin: 1rem 0;
+}
+
+.sobre p {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+.btn-primary {
+  margin-top: 1.5rem;
+  background: #292D42 !important;
+  color: #F9F9F9 !important;
+  border-radius: 30px;
+  padding: 22px 30px;
+}
+
+.sobre-card mat-card {
+  background: #F9F9F9;
+  color: #292D42;
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+.sobre-card h3 {
+  font-size: 28px;
+  margin-bottom: 1rem;
+}
+
+.sobre-card li {
+  margin-bottom: 0.8rem;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .sobre {
+    grid-template-columns: 1fr;
+    padding: 4rem 1.5rem;
+  }
+
+  .sobre h2 {
+    font-size: 32px;
+  }
+}
