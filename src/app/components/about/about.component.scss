@@ -2,7 +2,6 @@
   background: #CED8E3;
   color: #292D42;
   padding: 6rem 4rem;
-
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 3rem;
@@ -37,29 +36,34 @@
 }
 
 .sobre-card mat-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: #F9F9F9;
   color: #292D42;
-  border-radius: 24px;
+  border-radius: 28px;
   padding: 2rem;
+  box-shadow: 0 18px 45px rgba(60, 66, 97, 0.22);
+  border: 1px solid rgba(41, 41, 66, 0.08);
 }
 
 .sobre-card h3 {
   font-size: 28px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.sobre-card li {
-  margin-bottom: 0.8rem;
-  font-size: 16px;
+.estilos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
-@media (max-width: 900px) {
-  .sobre {
-    grid-template-columns: 1fr;
-    padding: 4rem 1.5rem;
-  }
-
-  .sobre h2 {
-    font-size: 32px;
-  }
+.estilos-lista span {
+  background: #CED8E3;
+  color: #292D42;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
 }
