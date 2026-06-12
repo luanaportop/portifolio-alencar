@@ -1,0 +1,218 @@
+$navy:   #292D42;
+$steel:  #CED8E3;
+$smoke:  #E8E4DD;
+$gold:   #B8965A;
+$gold-lt:#D4B483;
+$cream:  #F9F6F1;
+$ink:    #1a1c28;
+$muted:  #9a9490;
+
+// ── Seção principal
+.contato {
+  background: $cream;
+  color: $navy;
+  padding: 7rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
+  align-items: start;
+
+  // ── Coluna esquerda
+  &__lado-esq {
+    .subtitulo { margin-bottom: 1.4rem; }
+  }
+
+  &__h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: $navy;
+    margin: 0 0 1.6rem;
+    em { font-style: italic; color: $gold; }
+  }
+
+  &__desc {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: $muted;
+    line-height: 1.8;
+    max-width: 380px;
+    margin-bottom: 2.5rem;
+  }
+
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+    mat-icon {
+      color: $gold;
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+  }
+
+  &__info-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $muted;
+  }
+
+  &__info-val {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: $navy;
+  }
+
+  &__info-link {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: $gold;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($gold, 0.3);
+    padding-bottom: 1px;
+    transition: color 0.2s;
+    &:hover { color: darken($gold, 10%); }
+  }
+
+  // ── Formulário
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  &__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: $muted;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba($navy, 0.2);
+      color: $navy;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      padding: 0.65rem 0;
+      outline: none;
+      border-radius: 0;
+      transition: border-color 0.25s;
+      appearance: none;
+      -webkit-appearance: none;
+
+      &:focus {
+        border-bottom-color: $gold;
+      }
+
+      &::placeholder {
+        color: rgba($navy, 0.3);
+        font-weight: 300;
+      }
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8090' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      padding-right: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  &__submit {
+    align-self: flex-start;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FDFCFA;
+    background: $navy;
+    border: none;
+    padding: 0.95rem 2.4rem;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background 0.25s;
+    margin-top: 0.4rem;
+    &:hover { background: $ink; }
+  }
+}
+
+// ── Footer
+.rodape {
+  background: $ink;
+  padding: 2.2rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba($steel, 0.08);
+
+  &__logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba($steel, 0.7);
+    letter-spacing: 0.05em;
+  }
+
+  &__copy {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba($steel, 0.3);
+  }
+}
+
+@media (max-width: 900px) {
+  .contato {
+    grid-template-columns: 1fr;
+    padding: 5rem 1.5rem;
+    gap: 3.5rem;
+  }
+
+  .contato__form-row { grid-template-columns: 1fr; }
+  .rodape { padding: 2rem 1.5rem; flex-direction: column; gap: 0.8rem; text-align: center; }
+}

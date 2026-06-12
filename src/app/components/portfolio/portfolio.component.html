@@ -1,33 +1,70 @@
 <section id="portfolio" class="portfolio">
-  <div class="portfolio-header">
+  <div class="portfolio__header">
     <span class="subtitulo">Portfólio</span>
-    <h2>Alguns trabalhos</h2>
-    <p>Galeria com tatuagens autorais e projetos personalizados.</p>
+    <h2 class="portfolio__h2">Alguns <em>trabalhos</em></h2>
+    <p class="portfolio__desc">Galeria com tatuagens autorais e projetos personalizados.</p>
   </div>
 
   <div class="galeria">
-    <mat-card class="tattoo-card">
-      <img mat-card-image src="assets/images/tattoo-1.jpg" alt="Tatuagem 1">
+    <mat-card class="tattoo-card tattoo-card--tall">
+      <div class="tattoo-card__img-wrap">
+        <img mat-card-image src="assets/images/tattoo-1.jpg" alt="Tatuagem 1">
+        <div class="tattoo-card__overlay">
+          <span class="tattoo-card__tag">Fine Line</span>
+        </div>
+      </div>
     </mat-card>
 
     <mat-card class="tattoo-card">
-      <img mat-card-image src="assets/images/tattoo-2.jpg" alt="Tatuagem 2">
+      <div class="tattoo-card__img-wrap">
+        <img mat-card-image src="assets/images/tattoo-2.jpg" alt="Tatuagem 2">
+        <div class="tattoo-card__overlay">
+          <span class="tattoo-card__tag">Ornamental</span>
+        </div>
+      </div>
     </mat-card>
 
     <mat-card class="tattoo-card">
-      <img mat-card-image src="assets/images/tattoo-3.jpg" alt="Tatuagem 3">
+      <div class="tattoo-card__img-wrap">
+        <img mat-card-image src="assets/images/tattoo-3.jpg" alt="Tatuagem 3">
+        <div class="tattoo-card__overlay">
+          <span class="tattoo-card__tag">Blackwork</span>
+        </div>
+      </div>
+    </mat-card>
+
+    <mat-card class="tattoo-card tattoo-card--wide">
+      <div class="tattoo-card__img-wrap">
+        <img mat-card-image src="assets/images/tattoo-4.jpg" alt="Tatuagem 4">
+        <div class="tattoo-card__overlay">
+          <span class="tattoo-card__tag">Autoral</span>
+        </div>
+      </div>
     </mat-card>
 
     <mat-card class="tattoo-card">
-      <img mat-card-image src="assets/images/tattoo-4.jpg" alt="Tatuagem 4">
+      <div class="tattoo-card__img-wrap">
+        <img mat-card-image src="assets/images/tattoo-5.jpg" alt="Tatuagem 5">
+        <div class="tattoo-card__overlay">
+          <span class="tattoo-card__tag">Fine Line</span>
+        </div>
+      </div>
     </mat-card>
 
     <mat-card class="tattoo-card">
-      <img mat-card-image src="assets/images/tattoo-5.jpg" alt="Tatuagem 5">
+      <div class="tattoo-card__img-wrap">
+        <img mat-card-image src="assets/images/tattoo-6.jpg" alt="Tatuagem 6">
+        <div class="tattoo-card__overlay">
+          <span class="tattoo-card__tag">Ornamental</span>
+        </div>
+      </div>
     </mat-card>
+  </div>
 
-    <mat-card class="tattoo-card">
-      <img mat-card-image src="assets/images/tattoo-6.jpg" alt="Tatuagem 6">
-    </mat-card>
+  <div class="portfolio__footer">
+    <a class="portfolio__instagram"
+       href="https://instagram.com/" target="_blank">
+      Ver mais no Instagram ↗
+    </a>
   </div>
 </section>

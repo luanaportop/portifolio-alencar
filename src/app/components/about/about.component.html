@@ -1,36 +1,50 @@
 <section id="sobre" class="sobre">
-  <div class="sobre-texto">
+
+  <div class="sobre__imagem">
+    <div class="sobre__img-frame">
+      <img src="assets/images/principal-transparente.png" alt="Thay Tattoo">
+    </div>
+    <div class="sobre__img-deco"></div>
+  </div>
+
+  <div class="sobre__texto">
     <span class="subtitulo">Sobre a artista</span>
 
-    <h2>Traços delicados, arte autoral e cuidado em cada detalhe.</h2>
+    <h2 class="sobre__h2">
+      Traços delicados,<br>
+      arte autoral e<br>
+      <em>cuidado em cada detalhe.</em>
+    </h2>
 
-    <p>
-      A Thay Tattoo transforma histórias, símbolos e sentimentos em tatuagens únicas.
-      Seu trabalho une técnica, sensibilidade e uma estética elegante, criando artes
-      pensadas para cada cliente.
+    <p class="sobre__p">
+      A Thay Tattoo transforma histórias, símbolos e sentimentos em tatuagens
+      únicas. Seu trabalho une técnica, sensibilidade e uma estética elegante,
+      criando artes pensadas para cada cliente.
     </p>
 
-    <p>
-      Especializada em tatuagens finas, ornamentais e personalizadas, cada projeto é
-      desenvolvido com atenção ao estilo, significado e harmonia no corpo.
+    <p class="sobre__p">
+      Especializada em tatuagens finas, ornamentais e personalizadas, cada
+      projeto é desenvolvido com atenção ao estilo, significado e harmonia
+      no corpo.
     </p>
 
-    <a mat-raised-button class="btn-primary" href="#contato">
+    <div class="sobre__card">
+      <mat-card>
+        <mat-card-content>
+          <h3 class="sobre__card-titulo">Estilos</h3>
+          <div class="estilos-lista">
+            <span>Fine line</span>
+            <span>Ornamental</span>
+            <span>Blackwork delicado</span>
+            <span>Projetos autorais</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <a mat-raised-button class="sobre__btn" href="https://wa.me/+5561999260479" target="_blank">
       Agendar orçamento
     </a>
   </div>
 
-  <div class="sobre-card">
-    <mat-card>
-      <mat-card-content>
-        <h3>Estilos</h3>
-        <ul>
-          <li>Fine line</li>
-          <li>Ornamental</li>
-          <li>Blackwork delicado</li>
-          <li>Projetos autorais</li>
-        </ul>
-      </mat-card-content>
-    </mat-card>
-  </div>
 </section>

@@ -1,65 +1,185 @@
+$navy:   #292D42;
+$steel:  #CED8E3;
+$smoke:  #E8E4DD;
+$gold:   #B8965A;
+$gold-lt:#D4B483;
+$cream:  #F9F6F1;
+$ink:    #1a1c28;
+$muted:  #7a8090;
+
 .sobre {
-  background: #CED8E3;
-  color: #292D42;
-  padding: 6rem 4rem;
-
+  background: $navy;
+  color: #FDFCFA;
+  padding: 7rem 4rem;
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  // Ruído de textura
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba($gold, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  // ── Coluna da imagem
+  &__imagem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img-frame {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(20%) contrast(1.05) brightness(0.9);
+      display: block;
+    }
+  }
+
+  // Moldura decorativa deslocada
+  &__img-deco {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 1px solid rgba($gold, 0.25);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  // ── Coluna de texto
+  &__texto {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+
+    .subtitulo {
+      margin-bottom: 1.4rem;
+      color: $gold;
+      &::before { background: $gold; }
+    }
+  }
+
+  &__h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: #FDFCFA;
+    margin: 0 0 1.8rem;
+
+    em {
+      font-style: italic;
+      color: $gold;
+    }
+  }
+
+  &__p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba($steel, 0.7);
+    line-height: 1.8;
+    margin: 0 0 1rem;
+    max-width: 480px;
+  }
+
+  // ── Mat-card de estilos
+  &__card {
+    margin: 1.8rem 0 0.5rem;
+
+    mat-card {
+      background: rgba(#FDFCFA, 0.05) !important;
+      border: 1px solid rgba($gold, 0.2) !important;
+      border-radius: 2px !important;
+      padding: 1.6rem !important;
+      box-shadow: none !important;
+    }
+  }
+
+  &__card-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: $gold;
+    margin: 0 0 1rem;
+  }
+
+  &__btn {
+    margin-top: 1.8rem;
+    align-self: flex-start;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    background: $gold !important;
+    color: $ink !important;
+    border-radius: 0 !important;
+    padding: 0.8rem 2rem !important;
+    box-shadow: none !important;
+    text-decoration: none;
+    transition: background 0.25s !important;
+    &:hover { background: $gold-lt !important; }
+  }
 }
 
-.subtitulo {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 13px;
-  font-weight: 600;
-}
+// ── Chips de estilos
+.estilos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 
-.sobre h2 {
-  font-size: 42px;
-  max-width: 700px;
-  margin: 1rem 0;
-}
+  span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba($steel, 0.85);
+    background: rgba($steel, 0.08);
+    border: 1px solid rgba($steel, 0.18);
+    padding: 6px 14px;
+    border-radius: 0;
+    transition: background 0.2s, border-color 0.2s;
 
-.sobre p {
-  font-size: 17px;
-  line-height: 1.7;
-  max-width: 720px;
-}
-
-.btn-primary {
-  margin-top: 1.5rem;
-  background: #292D42 !important;
-  color: #F9F9F9 !important;
-  border-radius: 30px;
-  padding: 22px 30px;
-}
-
-.sobre-card mat-card {
-  background: #F9F9F9;
-  color: #292D42;
-  border-radius: 24px;
-  padding: 2rem;
-}
-
-.sobre-card h3 {
-  font-size: 28px;
-  margin-bottom: 1rem;
-}
-
-.sobre-card li {
-  margin-bottom: 0.8rem;
-  font-size: 16px;
+    &:hover {
+      background: rgba($gold, 0.12);
+      border-color: rgba($gold, 0.3);
+      color: $gold;
+    }
+  }
 }
 
 @media (max-width: 900px) {
   .sobre {
     grid-template-columns: 1fr;
-    padding: 4rem 1.5rem;
-  }
+    padding: 5rem 1.5rem;
+    gap: 3.5rem;
 
-  .sobre h2 {
-    font-size: 32px;
+    &__img-frame { max-width: 100%; }
+    &__img-deco  { display: none; }
+    &__imagem    { order: -1; }
   }
 }
