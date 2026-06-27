@@ -59,3 +59,14 @@ h1, h2, h3 {
 mat-card {
   --mdc-elevated-card-container-color: transparent;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #292D42;
+}
+
+body {
+  overflow-x: hidden;
+}
