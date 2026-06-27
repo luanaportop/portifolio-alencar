@@ -74,18 +74,29 @@ $white:   #FDFCFA;
   }
 }
 
-@media (max-width: 768px) {
-  .header {
-    padding: 1rem 1.5rem;
-    &.scrolled { padding: 0.8rem 1.5rem; }
+  @media (max-width: 768px) {
+    .header {
+      padding: 0.8rem 1rem;
+      gap: 1rem;
 
-    &__logo img { height: 56px; }
+      &.scrolled {
+        padding: 0.65rem 1rem;
+      }
 
-    &__nav {
-      gap: 0;
-      a[mat-button] { padding: 0.3rem 0.5rem !important; font-size: 11px !important; }
+      &__logo img {
+        height: 48px;
+      }
+
+      &__nav {
+        display: none;
+      }
+
+      &__cta {
+        margin-left: auto;
+        padding: 0.45rem 0.85rem;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        white-space: nowrap;
+      }
     }
-
-    &__cta { padding: 0.45rem 1rem; margin-left: 0.4rem; }
-  }
 }
