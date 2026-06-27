@@ -1,14 +1,15 @@
-<header class="header">
-
-  <div class="nome-logo">
-    <img src="../../../assets/images/assinatura-horizontal-transparente.png" alt="">
+<header class="header" [class.scrolled]="scrolled">
+  <div class="header__logo">
+    <img src="assets/images/assinatura-horizontal-transparente.png" alt="Thay Tattoo">
   </div>
 
-   <nav class="links-header">
+  <nav class="header__nav">
     <a mat-button href="#home">Home</a>
     <a mat-button href="#portfolio">Portfólio</a>
     <a mat-button href="#sobre">Sobre</a>
     <a mat-button href="#contato">Contato</a>
+    <a class="header__cta" href="https://wa.me/+5561999260479" target="_blank">
+      Agendar
+    </a>
   </nav>
-
 </header>

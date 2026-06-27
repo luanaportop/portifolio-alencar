@@ -1,135 +1,185 @@
+$navy:   #292D42;
+$steel:  #CED8E3;
+$smoke:  #E8E4DD;
+$gold:   #B8965A;
+$gold-lt:#D4B483;
+$cream:  #F9F6F1;
+$ink:    #1a1c28;
+$muted:  #7a8090;
+
 .sobre {
-  min-height: 100vh;
+  background: $navy;
+  color: #FDFCFA;
   padding: 7rem 4rem;
-  background:
-    radial-gradient(circle at top left, rgba(249, 249, 249, 0.55), transparent 35%),
-    linear-gradient(135deg, #CED8E3 0%, #F9F9F9 100%);
-  color: #292D42;
-
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 5rem;
   align-items: center;
-  gap: 4rem;
-}
+  position: relative;
+  overflow: hidden;
 
-.subtitulo {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 13px;
-  font-weight: 700;
-}
+  // Ruído de textura
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 0% 50%, rgba($gold, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
 
-.sobre h2 {
-  font-size: 52px;
-  line-height: 1.05;
-  max-width: 720px;
-  margin: 1rem 0 1.5rem;
-}
+  // ── Coluna da imagem
+  &__imagem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.sobre p {
-  font-size: 18px;
-  line-height: 1.8;
-  max-width: 650px;
-  margin-bottom: 2rem;
-}
+  &__img-frame {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
 
-.sobre-info {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2.2rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(20%) contrast(1.05) brightness(0.9);
+      display: block;
+    }
+  }
 
-  div {
-    background: rgba(249, 249, 249, 0.75);
-    border: 1px solid rgba(41, 45, 66, 0.08);
-    border-radius: 20px;
-    padding: 1rem 1.2rem;
-    min-width: 150px;
+  // Moldura decorativa deslocada
+  &__img-deco {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 1px solid rgba($gold, 0.25);
+    z-index: 0;
+    pointer-events: none;
+  }
 
+  // ── Coluna de texto
+  &__texto {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+
+    .subtitulo {
+      margin-bottom: 1.4rem;
+      color: $gold;
+      &::before { background: $gold; }
+    }
   }
 
-  strong {
-    font-size: 16px;
+  &__h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: #FDFCFA;
+    margin: 0 0 1.8rem;
+
+    em {
+      font-style: italic;
+      color: $gold;
+    }
   }
+
+  &__p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba($steel, 0.7);
+    line-height: 1.8;
+    margin: 0 0 1rem;
+    max-width: 480px;
+  }
+
+  // ── Mat-card de estilos
+  &__card {
+    margin: 1.8rem 0 0.5rem;
+
+    mat-card {
+      background: rgba(#FDFCFA, 0.05) !important;
+      border: 1px solid rgba($gold, 0.2) !important;
+      border-radius: 2px !important;
+      padding: 1.6rem !important;
+      box-shadow: none !important;
+    }
+  }
+
+  &__card-titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: $gold;
+    margin: 0 0 1rem;
+  }
+
+  &__btn {
+    margin-top: 1.8rem;
+    align-self: flex-start;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    background: $gold !important;
+    color: $ink !important;
+    border-radius: 0 !important;
+    padding: 0.8rem 2rem !important;
+    box-shadow: none !important;
+    text-decoration: none;
+    transition: background 0.25s !important;
+    &:hover { background: $gold-lt !important; }
+  }
+}
+
+// ── Chips de estilos
+.estilos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 
   span {
-    font-size: 13px;
-    opacity: 0.75;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba($steel, 0.85);
+    background: rgba($steel, 0.08);
+    border: 1px solid rgba($steel, 0.18);
+    padding: 6px 14px;
+    border-radius: 0;
+    transition: background 0.2s, border-color 0.2s;
+
+    &:hover {
+      background: rgba($gold, 0.12);
+      border-color: rgba($gold, 0.3);
+      color: $gold;
+    }
   }
-}
-
-.btn-primary {
-  background: #292D42 !important;
-  color: #F9F9F9 !important;
-  border-radius: 999px;
-  padding: 24px 34px;
-}
-
-.sobre-card mat-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: #F9F9F9;
-  color: #292D42;
-  border-radius: 36px;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 24px 70px rgba(41, 45, 66, 0.20);
-  border: 1px solid rgba(41, 45, 66, 0.08);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.icone {
-  width: 72px;
-  height: 72px;
-  background: #292D42;
-  color: #F9F9F9;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 30px;
-  margin-bottom: 1.5rem;
-}
-
-.sobre-card h3 {
-  font-size: 30px;
-  margin-bottom: 2rem;
-}
-
-.estilos-lista {
-  width: 100%;
-  display: grid;
-  gap: 1rem;
-}
-
-.estilo-item {
-  background: #CED8E3;
-  color: #292D42;
-  padding: 1rem 1.2rem;
-  border-radius: 18px;
-  font-weight: 600;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.estilo-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(41, 45, 66, 0.15);
 }
 
 @media (max-width: 900px) {
   .sobre {
     grid-template-columns: 1fr;
     padding: 5rem 1.5rem;
-  }
+    gap: 3.5rem;
 
-  .sobre h2 {
-    font-size: 38px;
+    &__img-frame { max-width: 100%; }
+    &__img-deco  { display: none; }
+    &__imagem    { order: -1; }
   }
 }

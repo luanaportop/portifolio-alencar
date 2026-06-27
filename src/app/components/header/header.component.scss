@@ -1,49 +1,91 @@
+$navy:    #292D42;
+$steel:   #CED8E3;
+$gold:    #B8965A;
+$cream:   #F9F6F1;
+$white:   #FDFCFA;
+
+:host {
+  display: block;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+}
+
 .header {
-  background: #292D42;
-  min-height: 110px;
-  padding: 1rem 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #CED8E3;
-}
+  padding: 1.4rem 4rem;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
 
-.nome-logo img {
-  height: 95px;
-  width: auto;
-  object-fit: contain;
-}
-
-.links-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  a {
-    color: #F9F9F9;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    text-decoration: none;
+  &.scrolled {
+    background: rgba($navy, 0.97);
+    box-shadow: 0 1px 0 rgba($steel, 0.1);
+    padding: 1rem 4rem;
+    backdrop-filter: blur(12px);
   }
 
-  a:hover {
-    color: #CED8E3;
+  &__logo img {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: height 0.3s;
+    .scrolled & { height: 58px; }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    a[mat-button] {
+      font-family: 'Barlow Condensed', sans-serif !important;
+      font-size: 12px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.2em !important;
+      text-transform: uppercase !important;
+      color: rgba($steel, 0.75) !important;
+      text-decoration: none;
+      padding: 0.4rem 0.8rem !important;
+      transition: color 0.2s !important;
+      &:hover { color: $white !important; }
+    }
+  }
+
+  &__cta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $gold !important;
+    border: 1px solid rgba($gold, 0.5);
+    padding: 0.55rem 1.4rem;
+    text-decoration: none;
+    margin-left: 0.8rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    &:hover {
+      background: $gold;
+      color: $navy !important;
+      border-color: $gold;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .header {
-    padding: 1rem;
-    flex-direction: column;
-    gap: 1rem;
-  }
+    padding: 1rem 1.5rem;
+    &.scrolled { padding: 0.8rem 1.5rem; }
 
-  .nome-logo img {
-    height: 80px;
-  }
+    &__logo img { height: 56px; }
 
-  .links-header {
-    flex-wrap: wrap;
-    justify-content: center;
+    &__nav {
+      gap: 0;
+      a[mat-button] { padding: 0.3rem 0.5rem !important; font-size: 11px !important; }
+    }
+
+    &__cta { padding: 0.45rem 1rem; margin-left: 0.4rem; }
   }
 }
